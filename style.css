@@ -1,0 +1,53 @@
+.bg-main {
+  background-color: #ddd;
+}
+
+.size {
+  width: 100vw;
+  height: 100vh;
+}
+
+.scale {
+  scale: 1;
+  transition: 0.2s;
+}
+
+.scale:hover {
+  scale: 1.1;
+}
+
+.scale:active {
+  scale: 1;
+}
+
+.font-text {
+  font-family: "ff-meta-correspondence-web-p", sans-serif;
+}
+
+.font-title {
+  font-family: "itc-giovanni", serif;
+}
+
+.pulse {
+  animation: pulse 2s linear infinite;
+}
+
+@keyframes pulse {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 0.9;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+.text-rutgers-red {
+  color: #C8102E;
+}
+
+.text-rutgers-gray {
+  color: #C8102E;
+}
