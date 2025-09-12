@@ -7,18 +7,36 @@
   height: 100vh;
 }
 
-.scale {
-  scale: 1;
-  transition: 0.2s;
+.transition-logo {
+  max-width: 1000px;
+  display: block;
+  margin: 0 auto;
+  transition: transform 2s ease-in-out; /* smooth slide */
 }
 
-.scale:hover {
-  scale: 1.1;
+.transition-logo-sm {
+  max-width: 400px;
+  display: block;
+  margin: 0 auto;
+  transition: transform 2s ease-in-out; /* smooth slide */
 }
 
-.scale:active {
-  scale: 1;
+
+/* When scrolled: move up-left and shrink */
+.logo-fixed {
+  transform: translate(-42.5vw, -40vh) scale(0.2);
 }
+
+/* Scroll text fade-out */
+#scroll-text {
+  transition: opacity 1s ease-in-out;
+}
+
+#scroll-text.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
 
 .font-text {
   font-family: "ff-meta-correspondence-web-p", sans-serif;
