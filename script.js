@@ -51,3 +51,6 @@ window.addEventListener("wheel", (e) => {
     }
   }
 });
+
+// & All of the above is from chatgpt for the slides
+
