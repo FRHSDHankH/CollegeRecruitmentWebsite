@@ -146,15 +146,43 @@
   }
 }
 
-.oval {
-  border-radius: 25vw;
-  width: 25vw;
+.circle1 {
+  border-radius: 50%;
+  width: 10vw;
+  height: 10vw;
   border: 0.15vw solid black;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  background: linear-gradient(to right, #C8102E, #f0526c);
 }
 
-.circle {
-  border-radius: 50vw;
+.circle2 {
+  border-radius: 50%;
   width: 12.5vw;
   height: 12.5vw;
   border: 0.15vw solid black;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  background: linear-gradient(to right, #666, #999);
+}
+
+.moveDown {
+  top: -3vw;
+  z-index: 1;
+  left: -2vw;
+}
+
+.moveUp {
+  bottom: -21vw;
+  right: 10vw;
+}
+
+.moveDownMore {
+  top: 14vw;
+}
+
+.moveUpMore {
+  bottom: -34vw;
+  right: 5vw;
+  z-index: 1;
 }
