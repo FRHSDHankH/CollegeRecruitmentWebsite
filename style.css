@@ -37,15 +37,6 @@
   visibility: hidden;
 }
 
-
-.font-text {
-  font-family: "ff-meta-correspondence-web-p", sans-serif;
-}
-
-.font-title {
-  font-family: "wreath", serif;
-}
-
 .pulse {
   animation: pulse 2s linear infinite;
 }
@@ -94,57 +85,62 @@
   font-size: 1.5rem;
   padding: 20px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  transform: translateX(100%) scale(0.8); /* start slightly smaller */
+  transform: translateX(100%) scale(0.8);
   opacity: 0;
 }
 
 .content-slide.active {
-  transform: translateX(0) scale(1); /* move in and scale up */
+  transform: translateX(0) scale(1); 
   opacity: 1;
   pointer-events: auto;
 }
 
 .content-slide.exit-left {
-  transform: translateX(-100%) scale(0.8); /* exit left and shrink slightly */
+  transform: translateX(-100%) scale(0.8);
   opacity: 0;
 }
 
 .content-slide.exit-right {
-  transform: translateX(100%) scale(0.8); /* exit right and shrink slightly */
+  transform: translateX(100%) scale(0.8); 
   opacity: 0;
 }
 
-.slideDown {
-  transform: translateY(0vh);
-  transition: all 2s ease-in-out;
-  @starting-style {
-    transform: translateY(-100vh);
-  }
-}
+/* The above was chatgpt for the slides */
 
-.slideUp {
-  transform: translateY(0vh);
-  transition: all 2s ease-in-out;
-  @starting-style {
-    transform: translateY(100vh);
-  }
-}
+/* Slide child animations: use a .start modifier to snap off-screen, no transition.
+   When .start is removed the element transitions into place. */
 
-.slideLeft {
-  transform: translateX(0vw);
-  transition: all 2s ease-in-out;
-  @starting-style {
-    transform: translateX(100vw);
-  }
-}
-
+.slideDown,
+.slideUp,
+.slideLeft,
 .slideRight {
-  transform: translateX(0vw);
-  transition: all 2s ease-in-out;
-  @starting-style {
-    transform: translateX(-100vw);
-  }
+  transform: translate(0,0);
+  transition: transform 4s ease-in-out;
+  will-change: transform;
 }
+
+/* shorter-duration variants */
+.slideDown1,
+.slideUp1,
+.slideLeft1,
+.slideRight1 {
+  transform: translate(0,0);
+  transition: transform 3.5s ease-in-out;
+  will-change: transform;
+}
+
+/* START states (snap - no transition) */
+.slideDown.start { transition: none; transform: translateY(-100vh); }
+.slideUp.start   { transition: none; transform: translateY(100vh); }
+.slideLeft.start { transition: none; transform: translateX(100vw); }
+.slideRight.start{ transition: none; transform: translateX(-100vw); }
+
+.slideDown1.start { transition: none; transform: translateY(-100vh); }
+.slideUp1.start   { transition: none; transform: translateY(100vh); }
+.slideLeft1.start { transition: none; transform: translateX(100vw); }
+.slideRight1.start{ transition: none; transform: translateX(-100vw); }
+
+
 
 .circle1 {
   border-radius: 50%;
@@ -166,23 +162,56 @@
   background: linear-gradient(to right, #666, #999);
 }
 
-.moveDown {
-  top: -3vw;
-  z-index: 1;
-  left: -2vw;
+.font-text {
+  font-family: "ff-meta-correspondence-web-p", sans-serif;
+  font-size: 1.75rem;
 }
 
-.moveUp {
-  bottom: -21vw;
-  right: 10vw;
+.font-title {
+  font-family: "wreath", serif;
+  font-size: 2.75rem;
 }
 
-.moveDownMore {
-  top: 14vw;
+@media (max-width: 1600px) {
+  .font-text {
+  font-family: "ff-meta-correspondence-web-p", sans-serif;
+  font-size: 1.2rem;
 }
 
-.moveUpMore {
-  bottom: -34vw;
-  right: 5vw;
-  z-index: 1;
+.font-title {
+  font-family: "wreath", serif;
+  font-size: 1.75rem;
+}
+}
+
+.pos1 {
+  left: 20vw;
+}
+
+.pos2 {
+  left: 23vw;
+  bottom: 5vh;
+}
+
+.pos3 {
+  left: 20vw;
+  bottom: 5vw;
+}
+
+.pos4 {
+  left: 26vw;
+  bottom: 10vw;
+}
+
+.posImg1 {
+  right: 30vw;
+  top: 2vw;
+  background-image: url(imgs/Studying.jpg);
+  background-size: cover;
+}
+.posImg2 {
+  right: 53vw;
+  top: 3vw;
+  background-image: url(imgs/Studying2.jpg);
+  background-size: cover;
 }
