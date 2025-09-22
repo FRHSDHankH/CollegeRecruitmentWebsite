@@ -8,28 +8,14 @@ let scrolling = false;
 
 // elements that carry per-element entrance animations
 const animSelectorList = [
+  // desktop
   ".slideDown", ".slideUp", ".slideLeft", ".slideRight",
-  ".slideDown1", ".slideUp1", ".slideLeft1", ".slideRight1"
+  ".slideDown1", ".slideUp1", ".slideLeft1", ".slideRight1",
+  // small/mobile
+  ".slideDownSmall", ".slideUpSmall", ".slideLeftSmall", ".slideRightSmall",
+  ".slideDownSmall1", ".slideUpSmall1", ".slideLeftSmall1", ".slideRightSmall1"
 ];
 const animSelectors = animSelectorList.join(", ");
-
-function prepareAndPlayAnimationsFor(slide) {
-  if (!slide) return;
-  const animElements = slide.querySelectorAll(animSelectors);
-  if (animElements.length === 0) return;
-
-  // 1) Put every anim element into the 'start' (snapped) state
-  animElements.forEach(el => el.classList.add("start"));
-
-  // 2) Make the slide visible first (so transforms happen while visible)
-  //    Then on the next animation frame remove 'start' to let the transition run
-  requestAnimationFrame(() => {
-    // force layout to ensure browser applied the start state
-    void slide.offsetWidth;
-    // remove start -> element will transition into its normal position
-    animElements.forEach(el => el.classList.remove("start"));
-  });
-}
 
 function showSlide(index, direction) {
   if (index < 0 || index >= slides.length) return;
@@ -45,16 +31,15 @@ function showSlide(index, direction) {
   const newSlide = slides[index];
 
   // Prepare child elements to start off-screen (snapped)
-  // We add 'start' BEFORE adding 'active' so they are off-screen when slide appears.
   const newAnimElems = newSlide.querySelectorAll(animSelectors);
   newAnimElems.forEach(el => el.classList.add("start"));
 
-  // Show the slide (this will also bring it into the layout)
+  // Show the slide
   newSlide.classList.add("active");
 
-  // On next frame force reflow and then remove 'start' to trigger transitions.
+  // On next frame remove 'start' so transitions fire
   requestAnimationFrame(() => {
-    void newSlide.offsetWidth;
+    void newSlide.offsetWidth; // force reflow
     newAnimElems.forEach(el => el.classList.remove("start"));
   });
 
@@ -79,7 +64,6 @@ window.addEventListener("wheel", (e) => {
   } else {
     // scroll up
     if (currentSlide === 0) {
-      // ONLY scroll up from the first slide returns the logo
       logo && logo.classList.remove("logo-fixed");
       logoSm && logoSm.classList.remove("logo-fixed");
       scrollText && scrollText.classList.remove("hidden");

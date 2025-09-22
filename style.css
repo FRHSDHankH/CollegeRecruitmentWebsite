@@ -107,38 +107,57 @@
 
 /* The above was chatgpt for the slides */
 
-/* Slide child animations: use a .start modifier to snap off-screen, no transition.
-   When .start is removed the element transitions into place. */
-
 .slideDown,
 .slideUp,
 .slideLeft,
 .slideRight {
   transform: translate(0,0);
-  transition: transform 4s ease-in-out;
-  will-change: transform;
+  transition: transform 2s ease-in-out;
 }
 
-/* shorter-duration variants */
 .slideDown1,
 .slideUp1,
 .slideLeft1,
 .slideRight1 {
   transform: translate(0,0);
-  transition: transform 3.5s ease-in-out;
-  will-change: transform;
+  transition: transform 1.5s ease-in-out;
 }
 
-/* START states (snap - no transition) */
-.slideDown.start { transition: none; transform: translateY(-100vh); }
-.slideUp.start   { transition: none; transform: translateY(100vh); }
-.slideLeft.start { transition: none; transform: translateX(100vw); }
-.slideRight.start{ transition: none; transform: translateX(-100vw); }
+.slideDown.start { transition: none; transform: translateY(-50vh); }
+.slideUp.start   { transition: none; transform: translateY(50vh); }
+.slideLeft.start { transition: none; transform: translateX(50vw); }
+.slideRight.start{ transition: none; transform: translateX(-50vw); }
 
-.slideDown1.start { transition: none; transform: translateY(-100vh); }
-.slideUp1.start   { transition: none; transform: translateY(100vh); }
-.slideLeft1.start { transition: none; transform: translateX(100vw); }
-.slideRight1.start{ transition: none; transform: translateX(-100vw); }
+.slideDown1.start { transition: none; transform: translateY(-50vh); }
+.slideUp1.start   { transition: none; transform: translateY(50vh); }
+.slideLeft1.start { transition: none; transform: translateX(50vw); }
+.slideRight1.start{ transition: none; transform: translateX(-50vw); }
+
+.slideDownSmall,
+.slideUpSmall,
+.slideLeftSmall,
+.slideRightSmall {
+  transform: translate(0,0);
+  transition: transform 2s ease-in-out;
+}
+
+.slideDownSmall1,
+.slideUpSmall1,
+.slideLeftSmall1,
+.slideRightSmall1 {
+  transform: translate(0,0);
+  transition: transform 1.5s ease-in-out;
+}
+
+.slideDownSmall.start { transition: none; transform: translateY(-100vh); }
+.slideUpSmall.start   { transition: none; transform: translateY(100vh); }
+.slideLeftSmall.start { transition: none; transform: translateX(100vw); }
+.slideRightSmall.start{ transition: none; transform: translateX(-100vw); }
+
+.slideDownSmall1.start { transition: none; transform: translateY(-100vh); }
+.slideUpSmall1.start   { transition: none; transform: translateY(100vh); }
+.slideLeftSmall1.start { transition: none; transform: translateX(100vw); }
+.slideRightSmall1.start{ transition: none; transform: translateX(-100vw); }
 
 
 
@@ -162,6 +181,14 @@
   background: linear-gradient(to right, #666, #999);
 }
 
+.bg-red {
+  background: linear-gradient(to right, #C8102E, #f0526c);
+}
+
+.bg-gray {
+  background: linear-gradient(to right, #666, #999);
+}
+
 .font-text {
   font-family: "ff-meta-correspondence-web-p", sans-serif;
   font-size: 1.75rem;
@@ -177,6 +204,7 @@
   font-family: "ff-meta-correspondence-web-p", sans-serif;
   font-size: 1.2rem;
 }
+
 
 .font-title {
   font-family: "wreath", serif;
@@ -204,8 +232,8 @@
 }
 
 .posImg1 {
-  right: 30vw;
-  top: 2vw;
+  right: 27vw;
+  top: 7vw;
   background-image: url(imgs/Studying.jpg);
   background-size: cover;
 }
@@ -214,4 +242,14 @@
   top: 3vw;
   background-image: url(imgs/Studying2.jpg);
   background-size: cover;
+}
+
+.fill {
+  width: 100vw;
+  height: 100%;
+}
+
+.imgSize {
+  width: 40vw;
+  height: auto;
 }
