@@ -58,7 +58,7 @@
 }
 
 .text-rutgers-gray {
-  color: #5F6A72;
+  color: #686d70;
 }
 
 #content-container {
@@ -84,7 +84,6 @@
   justify-content: center;
   font-size: 1.5rem;
   padding: 20px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
   transform: translateX(100%) scale(0.8);
   opacity: 0;
 }
@@ -254,3 +253,14 @@
   height: auto;
 }
 
+.down {
+  transform: translateY(5vh);
+}
+
+.bg-50 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.cImgs {
+  height: 75vh;
+}
