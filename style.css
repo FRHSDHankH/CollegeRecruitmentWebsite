@@ -21,7 +21,6 @@
   transition: transform 2s ease-in-out; /* smooth slide */
 }
 
-
 /* When scrolled: move up-left and shrink */
 .logo-fixed {
   transform: translate(-42.5vw, -40vh) scale(0.2);
@@ -54,7 +53,7 @@
 }
 
 .text-rutgers-red {
-  color: #C8102E;
+  color: #ff143c;
 }
 
 .text-rutgers-gray {
@@ -89,7 +88,7 @@
 }
 
 .content-slide.active {
-  transform: translateX(0) scale(1); 
+  transform: translateX(0) scale(1);
   opacity: 1;
   pointer-events: auto;
 }
@@ -100,7 +99,7 @@
 }
 
 .content-slide.exit-right {
-  transform: translateX(100%) scale(0.8); 
+  transform: translateX(100%) scale(0.8);
   opacity: 0;
 }
 
@@ -110,7 +109,7 @@
 .slideUp,
 .slideLeft,
 .slideRight {
-  transform: translate(0,0);
+  transform: translate(0, 0);
   transition: transform 2s ease-in-out;
 }
 
@@ -118,25 +117,49 @@
 .slideUp1,
 .slideLeft1,
 .slideRight1 {
-  transform: translate(0,0);
+  transform: translate(0, 0);
   transition: transform 1.5s ease-in-out;
 }
 
-.slideDown.start { transition: none; transform: translateY(-50vh); }
-.slideUp.start   { transition: none; transform: translateY(50vh); }
-.slideLeft.start { transition: none; transform: translateX(50vw); }
-.slideRight.start{ transition: none; transform: translateX(-50vw); }
+.slideDown.start {
+  transition: none;
+  transform: translateY(-50vh);
+}
+.slideUp.start {
+  transition: none;
+  transform: translateY(50vh);
+}
+.slideLeft.start {
+  transition: none;
+  transform: translateX(50vw);
+}
+.slideRight.start {
+  transition: none;
+  transform: translateX(-50vw);
+}
 
-.slideDown1.start { transition: none; transform: translateY(-50vh); }
-.slideUp1.start   { transition: none; transform: translateY(50vh); }
-.slideLeft1.start { transition: none; transform: translateX(50vw); }
-.slideRight1.start{ transition: none; transform: translateX(-50vw); }
+.slideDown1.start {
+  transition: none;
+  transform: translateY(-50vh);
+}
+.slideUp1.start {
+  transition: none;
+  transform: translateY(50vh);
+}
+.slideLeft1.start {
+  transition: none;
+  transform: translateX(50vw);
+}
+.slideRight1.start {
+  transition: none;
+  transform: translateX(-50vw);
+}
 
 .slideDownSmall,
 .slideUpSmall,
 .slideLeftSmall,
 .slideRightSmall {
-  transform: translate(0,0);
+  transform: translate(0, 0);
   transition: transform 2s ease-in-out;
 }
 
@@ -144,21 +167,43 @@
 .slideUpSmall1,
 .slideLeftSmall1,
 .slideRightSmall1 {
-  transform: translate(0,0);
+  transform: translate(0, 0);
   transition: transform 1.5s ease-in-out;
 }
 
-.slideDownSmall.start { transition: none; transform: translateY(-100vh); }
-.slideUpSmall.start   { transition: none; transform: translateY(100vh); }
-.slideLeftSmall.start { transition: none; transform: translateX(100vw); }
-.slideRightSmall.start{ transition: none; transform: translateX(-100vw); }
+.slideDownSmall.start {
+  transition: none;
+  transform: translateY(-100vh);
+}
+.slideUpSmall.start {
+  transition: none;
+  transform: translateY(100vh);
+}
+.slideLeftSmall.start {
+  transition: none;
+  transform: translateX(100vw);
+}
+.slideRightSmall.start {
+  transition: none;
+  transform: translateX(-100vw);
+}
 
-.slideDownSmall1.start { transition: none; transform: translateY(-100vh); }
-.slideUpSmall1.start   { transition: none; transform: translateY(100vh); }
-.slideLeftSmall1.start { transition: none; transform: translateX(100vw); }
-.slideRightSmall1.start{ transition: none; transform: translateX(-100vw); }
-
-
+.slideDownSmall1.start {
+  transition: none;
+  transform: translateY(-100vh);
+}
+.slideUpSmall1.start {
+  transition: none;
+  transform: translateY(100vh);
+}
+.slideLeftSmall1.start {
+  transition: none;
+  transform: translateX(100vw);
+}
+.slideRightSmall1.start {
+  transition: none;
+  transform: translateX(-100vw);
+}
 
 .circle1 {
   border-radius: 50%;
@@ -167,7 +212,7 @@
   border: 0.15vw solid black;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(5px);
-  background: linear-gradient(to right, #C8102E, #f0526c);
+  background: linear-gradient(to right, #c8102e, #f0526c);
 }
 
 .circle2 {
@@ -181,7 +226,7 @@
 }
 
 .bg-red {
-  background: linear-gradient(to right, #C8102E, #f0526c);
+  background: linear-gradient(to right, #c8102e, #f0526c);
 }
 
 .bg-gray {
@@ -200,15 +245,14 @@
 
 @media (max-width: 1600px) {
   .font-text {
-  font-family: "ff-meta-correspondence-web-p", sans-serif;
-  font-size: 1.2rem;
-}
+    font-family: "ff-meta-correspondence-web-p", sans-serif;
+    font-size: 1.2rem;
+  }
 
-
-.font-title {
-  font-family: "wreath", serif;
-  font-size: 1.75rem;
-}
+  .font-title {
+    font-family: "wreath", serif;
+    font-size: 1.75rem;
+  }
 }
 
 .pos1 {
@@ -257,10 +301,19 @@
   transform: translateY(5vh);
 }
 
+.up {
+  transform: translateY(-8vh);
+}
+
 .bg-50 {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 .cImgs {
   height: 75vh;
+}
+
+#rutgers-logo,
+#rutgers-logo-sm {
+  cursor: pointer;
 }

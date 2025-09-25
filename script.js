@@ -74,3 +74,20 @@ window.addEventListener("wheel", (e) => {
     }
   }
 });
+
+// Reset to first page when clicking the small Rutgers logo
+[logo, logoSm].forEach(el => {
+  if (!el) return;
+  el.addEventListener("click", () => {
+    // Reset current slide
+    if (currentSlide >= 0) {
+      slides[currentSlide].classList.remove("active", "exit-left", "exit-right");
+    }
+    currentSlide = -1;
+
+    // Reset logo + scroll text
+    logo && logo.classList.remove("logo-fixed");
+    logoSm && logoSm.classList.remove("logo-fixed");
+    scrollText && scrollText.classList.remove("hidden");
+  });
+});
